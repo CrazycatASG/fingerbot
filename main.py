@@ -1,7 +1,7 @@
 # Finger, the official bot for The Gathering under The Stars, The Royal Army of the Kingdom of Samuel, amongst others.
 # This software is licensed under the MIT license, which can be found included in the source code or at https://mit-license.org
 
-import discord, os, random, logging, games, asyncio
+import discord, os, random, logging, games, asyncio, sys
 from dotenv import load_dotenv
 
 topics = []
@@ -28,9 +28,15 @@ intents.message_content = True
 
 client = finger(intents=intents)
 
-handler = logging.FileHandler(filename='fingerbot.log', encoding='utf-8', mode='w')
+
+arg = sys.argv[1] if len(sys.argv) > 1 else print("No arguments specified.")
+
+
 
 load_dotenv()
 token = os.environ.get("TOKEN")
-client.run(token, log_handler=handler, log_level=logging.DEBUG)
-#
+if arg == "debug": 
+    handler = logging.FileHandler(filename='fingerbot.log', encoding='utf-8', mode='w')
+    client.run(token, log_handler=handler, log_level=logging.DEBUG)
+else:
+    client.run(token)
