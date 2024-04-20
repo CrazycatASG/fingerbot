@@ -36,6 +36,7 @@ arg = sys.argv[1] if len(sys.argv) > 1 else print("No arguments specified.")
 load_dotenv()
 token = os.environ.get("TOKEN")
 if arg == "debug": 
+    logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
     handler = logging.FileHandler(filename='fingerbot.log', encoding='utf-8', mode='w')
     client.run(token, log_handler=handler, log_level=logging.DEBUG)
 else:
