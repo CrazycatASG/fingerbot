@@ -28,6 +28,9 @@ intents.message_content = True
 
 client = finger(intents=intents)
 
+handler = logging.FileHandler(filename='fingerbot.log', encoding='utf-8', mode='w')
+
 load_dotenv()
-client.run(os.environ.get("TOKEN"))
+token = os.environ.get("TOKEN")
+client.run(token, log_handler=handler, log_level=logging.DEBUG)
 #
