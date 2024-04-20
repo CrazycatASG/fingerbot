@@ -1,4 +1,4 @@
-# Finger, the official bot for The Gathering under The Stars, The Royal Army of the Kingdom of Samuel, amongst others.
+# Finger, the official bot for The Royal Army of the Kingdom of Samuel, amongst others.
 # This software is licensed under the MIT license, which can be found included in the source code or at https://mit-license.org
 
 import discord, os, random, logging, games, asyncio, sys
