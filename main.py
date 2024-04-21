@@ -1,7 +1,7 @@
 # Finger, the official bot for The Royal Army of the Kingdom of Samuel, amongst others.
 # This software is licensed under the MIT license, which can be found included in the source code or at https://mit-license.org
 
-import discord, os, random, logging, games, asyncio, sys
+import discord, os, random, logging, games, asyncio, sys, time
 from dotenv import load_dotenv
 
 topics = []
@@ -12,7 +12,7 @@ with open("questions.txt") as questions:
 
 class finger(discord.Client):
     async def on_ready(self):
-        print(f'We have logged in as {client.user}')
+        print(f'We have logged in as {client.user} at {time.strftime('%H:%M:%S')} on the {time.strftime("%d")}th of {time.strftime("%B, %Y")}.')
 
     async def on_message(self, message):
         if message.author == client.user: return
@@ -39,5 +39,9 @@ if arg == "debug":
     logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
     handler = logging.FileHandler(filename='fingerbot.log', encoding='utf-8', mode='w')
     client.run(token, log_handler=handler, log_level=logging.DEBUG)
+elif arg == "debugonlywarn":
+    logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
+    handler = logging.FileHandler(filename='fingerbot.log', encoding='utf-8', mode='w')
+    client.run(token, log_handler=handler, log_level=logging.WARNING)
 else:
     client.run(token)
