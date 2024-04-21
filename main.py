@@ -13,6 +13,7 @@ with open("questions.txt") as questions:
 class finger(discord.Client):
     async def on_ready(self):
         print(f'We have logged in as {client.user} at {time.strftime('%H:%M:%S')} on the {time.strftime("%d")}th of {time.strftime("%B, %Y")}.')
+        logging.debug(f'We have logged in as {client.user} at {time.strftime('%H:%M:%S')} on the {time.strftime("%d")}th of {time.strftime("%B, %Y")}.')
 
     async def on_message(self, message):
         if message.author == client.user: return
