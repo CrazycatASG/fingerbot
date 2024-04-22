@@ -30,7 +30,7 @@ intents.message_content = True
 client = finger(intents=intents)
 
 
-arg = sys.argv[1] if len(sys.argv) > 1 else print("No arguments specified.")
+arg = sys.argv[1] if len(sys.argv) > 1 else pass
 
 
 
