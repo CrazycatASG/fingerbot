@@ -5,7 +5,8 @@ So yeah here we are.
 If you want to run this, here's the steps in order. **NOTE**: You will need an existing Discord bot for this to work. If you don't know how to do that, *sigh*, [here](https://gist.github.com/CrazycatASG/b8c0c54c20e4cbb23b7ef20bda21d475)
 
 1. Clone this repo using ```git clone https://github.com/CrazycatASG/fingerbot.git```
-2. Create a .env file, and create a variable named TOKEN (***in full caps!!!***), and paste your bot token in there.
-3. That should be it. Run ```py main.py``` to get started
+2. Run ```pip install -r requirements.txt``` to install the required dependencies. 
+3. Create a .env file, and create a variable named TOKEN (***in full caps!!!***), and paste your bot token in there.
+4. That should be it. Run ```py main.py``` to get started
 
 
